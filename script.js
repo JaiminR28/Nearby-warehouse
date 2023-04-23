@@ -120,18 +120,18 @@ locations.forEach(location => {
     });
 });
 
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '8048530456mshd702a7e93d8d947p133668jsn0dcdbe319bbd',
-    'X-RapidAPI-Host': 'trueway-matrix.p.rapidapi.com',
-  },
-};
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '8048530456mshd702a7e93d8d947p133668jsn0dcdbe319bbd',
+//     'X-RapidAPI-Host': 'trueway-matrix.p.rapidapi.com',
+//   },
+// };
 
-fetch(
-  'https://trueway-matrix.p.rapidapi.com/CalculateDrivingMatrix?origins=23.1870706%2C%2072.6268105&destinations=23.185675%2C72.629526',
-  options
-)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+// fetch(
+//   'https://trueway-matrix.p.rapidapi.com/CalculateDrivingMatrix?origins=23.1870706%2C%2072.6268105&destinations=23.185675%2C72.629526',
+//   options
+// )
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
