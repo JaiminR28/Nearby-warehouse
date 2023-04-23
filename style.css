@@ -36,6 +36,12 @@ body {
   margin: 0 auto;
 }
 
+.line-break {
+  margin: 3rem auto;
+  width: 70%;
+  color: var(--color-light--1);
+}
+
 /* Heading */
 
 .heading--container {
@@ -83,7 +89,6 @@ body {
 
 .map--container {
   /* width: 80%; */
-  background-color: #00c46921;
   height: 64vh;
   display: flex;
   margin: 0 auto;
@@ -132,7 +137,8 @@ body {
 }
 
 .Warehouse--locations {
-  overflow-y: scroll;
+  overflow: scroll;
+  height: 56vh;
   margin-top: 2rem;
 }
 
@@ -164,7 +170,7 @@ body {
 }
 
 .details--div--heading {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -175,17 +181,55 @@ body {
 }
 
 .details--svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke-width: 0.2rem;
   margin-right: 0.2rem;
 }
 
-.rating-img {
+.red-stroke {
+  stroke: red;
+}
+
+.red-fill {
+  fill: red;
 }
 
 .distance-div {
   margin: 0;
 }
 
-.distance-div p {
+.deatils--info {
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-left: 0.4rem;
+}
+
+/* pin location */
+
+.pin--location {
+  color: #2d3439;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  width: 8rem;
+  height: 3rem;
+  font-size: 1.2rem;
+
+  font-weight: 600;
+  background-color: #fff;
+  border-radius: 1rem;
+
+  border: none;
+}
+
+.pin--location:hover,
+.pin--location:active {
+  background-color: #2d3439;
+  color: #fff;
+}
+
+.pin--location p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

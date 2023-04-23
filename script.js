@@ -16,22 +16,20 @@ async function getCurrentAdress() {
 
 // getCurrentAdress();
 
-var HomeIcon = L.icon({
+let HomeIcon = L.icon({
   iconUrl: 'Images/homeIcon.png',
-
   iconSize: [50, 50], // size of the icon
   iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
   shadowAnchor: [4, 62], // the same for the shadow
   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
 });
 
-var WarehouseIcon = L.icon({
-  iconUrl: 'Images/Warehouse_marker.png',
-
-  iconSize: [38, 40], // size of the icon// point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62], // the same for the shadow
-  popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-});
+let WarehouseIcon = data => {
+  new L.DivIcon({
+    className: 'my-div-icon',
+    html: '<span class="my-div-span">RAF Banff Airfield</span>',
+  });
+};
 
 let map = L.map('map').setView([23.1870706, 72.6268105], 15);
 
@@ -47,7 +45,7 @@ let locations = [
     id: 1,
     lat: 23.185675,
     long: 72.629526,
-    title: 'Warehouse 1',
+    title: 'Sharma warehouse wala',
     src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     url: 'https://www.google.co.in/ ',
   },
@@ -82,7 +80,12 @@ let popupOption = {
 };
 
 locations.forEach(location => {
-  new L.marker([location.lat, location.long], { icon: WarehouseIcon })
+  new L.marker([location.lat, location.long], {
+    icon: new L.DivIcon({
+      className: 'my-div-icon',
+      html: `<button class="pin--location"><p>${location.title}</p></button>`,
+    }),
+  })
     .addTo(map)
     .on('click', function () {
       let marker = this;
